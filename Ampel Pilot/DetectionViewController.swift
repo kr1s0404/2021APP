@@ -16,7 +16,7 @@ import VideoToolbox
 class DetectionViewController: UIViewController {
 
     @IBOutlet weak var videoPreview: UIView! // Test
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel! // Test
     @IBOutlet weak var resultsView: UIView!
     @IBOutlet weak var pauseScreen: UIVisualEffectView!
     
