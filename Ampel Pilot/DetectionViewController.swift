@@ -45,7 +45,7 @@ class DetectionViewController: UIViewController {
     
     private var enteringForeground = false
     
-    lazy var zoomInButton: UIView = { 
+    lazy var zoomInButton: UIView = { // 相機鏡頭倍率放大用按鈕
         let btn = UIButton(type: .system)
         btn.layer.cornerRadius = 5
         btn.layer.masksToBounds = true
@@ -66,7 +66,7 @@ class DetectionViewController: UIViewController {
         
     }()
     
-    lazy var zoomOutButton: UIView = {
+    lazy var zoomOutButton: UIView = { // 相機鏡頭倍率縮小用按鈕
         let btn = UIButton(type: .system)
         btn.layer.cornerRadius = 5
         btn.layer.masksToBounds = true
@@ -87,7 +87,7 @@ class DetectionViewController: UIViewController {
         
     }()
     
-    lazy var settingsButton: UIBarButtonItem = {
+    lazy var settingsButton: UIBarButtonItem = { // 設定按鈕
         let settingsButton = UIBarButtonItem(title: NSString(string: "\u{2699}\u{0000FE0E}") as String, style: .plain, target: self, action: #selector(settingsBtnPressed))
         let font = UIFont.systemFont(ofSize: 28) // adjust the size as required
         let attributes = [NSAttributedStringKey.font : font]

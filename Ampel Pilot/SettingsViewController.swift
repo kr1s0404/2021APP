@@ -17,12 +17,12 @@ class SettingsViewController: UITableViewController {
     
     var viewModel: SettingsViewModel!
     
-    @IBOutlet weak var soundSwitch: UISwitch!
-    @IBOutlet weak var vibrationSwitch: UISwitch!
-    @IBOutlet weak var confidenceSlider: UISlider!
-    @IBOutlet weak var resolutionLabel: UILabel!
-    @IBOutlet weak var zoomLabel: UILabel!
-    @IBOutlet weak var camPreviewSwitch: UISwitch!
+    @IBOutlet weak var soundSwitch: UISwitch! // 要不要念語音的開關
+    @IBOutlet weak var vibrationSwitch: UISwitch! // 手機震動的開關
+    @IBOutlet weak var confidenceSlider: UISlider! // 判定參數的開關
+    @IBOutlet weak var resolutionLabel: UILabel! // 相機解析度的text
+    @IBOutlet weak var zoomLabel: UILabel! // 放大倍率的text
+    @IBOutlet weak var camPreviewSwitch: UISwitch! // 相機預覽的開關
     
     lazy var closeButton: UIBarButtonItem = {
         let bi = UIBarButtonItem(title: "關閉", style: UIBarButtonItemStyle.plain, target: self, action: #selector(closeBtnPressed))
