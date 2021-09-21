@@ -15,37 +15,37 @@ import VideoToolbox
 
 class DetectionViewController: UIViewController {
 
-    @IBOutlet weak var videoPreview: UIView! // Test
-    @IBOutlet weak var timeLabel: UILabel! // Test
-    @IBOutlet weak var resultsView: UIView!
-    @IBOutlet weak var pauseScreen: UIVisualEffectView!
+    @IBOutlet weak var videoPreview: UIView! // 相機畫面預覽
+    @IBOutlet weak var timeLabel: UILabel! // 時間標記
+    @IBOutlet weak var resultsView: UIView! // 紅綠燈結果畫面
+    @IBOutlet weak var pauseScreen: UIVisualEffectView! // 相機暫停畫面
     
-    let visualFeedbackView = VisualFeedbackView()
+    let visualFeedbackView = VisualFeedbackView() // 辨識結果view
     
     var viewModel: DetectionViewModel!
     
     let yolo = YOLO()
-    let motionManager = MotionManager()
-    var lightPhaseManager: LightPhaseManager!
+    let motionManager = MotionManager() // 相機管理
+    var lightPhaseManager: LightPhaseManager! // 紅綠燈管理相關
     
-    var videoCapture: VideoCapture?
+    var videoCapture: VideoCapture? // 相機鏡頭開啟
     
-    var devicePitchAcceptable = true
+    var devicePitchAcceptable = true // 手機頃角
     var request: VNCoreMLRequest!
     var startTimes: [CFTimeInterval] = []
     
-    var boundingBoxes = [BoundingBox]()
-    var colors: [UIColor] = []
+    var boundingBoxes = [BoundingBox]() // 紅綠燈預測框框
+    var colors: [UIColor] = [] // 紅 綠
     
     let ciContext = CIContext()
     
-    var framesDone = 0
+    var framesDone = 0 // 偵數參數
     var frameCapturingStartTime = CACurrentMediaTime()
     let semaphore = DispatchSemaphore(value: 2)
     
     private var enteringForeground = false
     
-    lazy var zoomInButton: UIView = {
+    lazy var zoomInButton: UIView = { 
         let btn = UIButton(type: .system)
         btn.layer.cornerRadius = 5
         btn.layer.masksToBounds = true
